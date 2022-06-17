@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garra placa</title>
+</head>
+<body>
+  <%- include('header') %> 
+
+    <h1>Ingrese con su usuario correspondiente</h1>
+
+    <div class="row"  style="margin-left: 50px; margin-right: 50px">
+      <div class="col-sm-6"  style="padding: 20px;">
+        <div class="card">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title" style="margin-bottom: 50px;" >Acceso Cliente</h5>
+            <a href="/userform" class="btn btn-primary" style="margin-bottom: 30px;">INGRESAR A PORTAL</a>
+            <p class="card-text">Para realizar compras en el portal de garra y placas no es necesario iniciar sesión.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6" style="padding: 20px;">
+        <div class="card">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title" style="margin-bottom: 50px;">Acceso para Administrador</h5>
+            
+            <a href="/loginadmin" class="btn btn-primary" style="margin-bottom: 80px;">INICIO DE SESÍON</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('footer') %> 
+</body>
+</html>

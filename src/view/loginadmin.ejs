@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Garra placa</title>
+</head>
+<body>
+    <!-- <h1>Main</h1> -->
+    <%- include('header') %> 
+
+
+    <h1>Ingrese con su usuario correspondiente</h1>
+
+    <!-- <div class="row"  style="margin-left: 200px; margin-right: 200px"> -->
+    <form action="<?php echo constant('URL'); ?>loginadmin/validarAdmin" method="POST">
+      <div class="row"  style="margin-left: 250px; margin-right: 250px; margin-bottom: 50px">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title" style="margin-bottom: 50px;" >Login Administrador</h5>
+            
+            <div style="margin-left: 300px; margin-right: 300px">
+            <div class="col-md-12">
+              <label for="usuario" class="form-label">Nombre Usuario</label>
+              <input type="usuario" class="form-control" id="usuario" name="usuario">
+            </div>
+            <div class="col-md-12">
+              <label for="contraseña" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="contraseña" name="contraseña">
+            </div>
+          </div>
+          <div style="margin-top: 20px;  margin-bottom: 30px;">
+          <button type="submit" class="btn btn-primary" >INICIAR SESIÓN</button>
+          <!--  <a href="managadmin.html" class="btn btn-primary">INICIAR SESIÓN</a> -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+   
+    <%- include('footer') %> 
+
+</body>
+</html>

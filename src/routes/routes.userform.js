@@ -6,7 +6,8 @@ const routes = express.Router();
 
 // put edita datos
 // post el set
-routes.get("/userform",controller.renderuserform);
+routes.get("/userform",controller.renderregion);
+//routes.get("/userform",controller.rendercomuna);
 
 
 //Guardar los datos del formlario en la base de datos

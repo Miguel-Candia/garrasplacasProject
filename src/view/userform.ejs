@@ -30,15 +30,36 @@
         <input type="number" class="form-control" id="number" name="telefono">
       </div>
 
+      <div class="col-md-6">
+        <label for="inputState" class="form-label">Region</label>
+        <select id="inputState" class="form-select" name="region">
+        <option selected>Seleccione...</option>
+      <% for(let i=0; i < regiones.length; i++) { %>
+
+        <option > <%= regiones[i].nombre_region %></option>
+
+        <% } %>
+
+      </select>
+    </div>
+      
+
+
+
+    <div class="col-md-6">
+      <label for="inputState" class="form-label">Comuna</label>
+      <select id="inputState" class="form-select" name="comuna">
+      <option selected>Seleccione...</option>
+
+        <option ></option>
+
+      </select>
+    </div>
+
 
   
 
-      <div class="col-md-6">
-        <label for="inputState" class="form-label">Comuna</label>
-        <select id="inputState" class="form-select" name="comuna">
-        <option selected>Seleccione...</option>
-        </select>
-      </div>
+
       
       <div class="col-md-3">
         <label for="calle" class="form-label">Calle</label>

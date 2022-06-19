@@ -3,33 +3,50 @@ const controller = {};
 
 
 
-controller.renderuserform = (req,res) =>{
+controller.renderregion = (req,res) =>{
     
-     req.getConnection(async(err,con)=>{
+     req.getConnection((err,con)=>{
 
-        let regiones = await con.query("SELECT * FROM REGION");
-
-
-  /*     let collares = con.query("SELECT * FROM COLLAR",(err,rows)=>{
+      con.query("SELECT * FROM REGION",(err,regiones)=>{
             if(err){
                 console.log("Error: "+err);
                 res.render("error",(err.messages));
             }else{
-                return rows;
+                console.log(regiones);
+            res.render("userform",{regiones});
+                
             }
         });
 
-         console.log(collares);
-         
-*/
-        console.log(regiones);
-        res.render("userform",{regiones});
-
-
-
 
     });
+    
 }
 
-
 module.exports = controller;
+/*
+controller.rendercomuna = (req,res) =>{
+    
+    req.getConnection((err,con)=>{
+
+       con.query("SELECT * FROM COMUNA",(err,comunas)=>{
+           if(err){
+               console.log("Error: "+err);
+               res.render("error",(err.messages));
+           }else{
+               console.log(comunas);
+               res.render("userform",{comunas});
+  
+           }
+       });
+
+
+   });
+   
+}
+*/
+
+
+
+
+

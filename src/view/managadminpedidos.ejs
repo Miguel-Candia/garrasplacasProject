@@ -10,16 +10,16 @@
 </head>
 <body>
     <!-- <h1>Main</h1> -->
-    <%- include('header') %> 
+    <%- include('headeradmin') %> 
 
     <div>
       <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="true" href="managadmin.html">Inventario</a>
+            <a class="nav-link" aria-current="true" href="/managadmin">Inventario</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pedidos</a>
+            <a class="nav-link active" aria-current="true" href="/managadminpedidos">Pedidos</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
@@ -30,116 +30,49 @@
     <table class="table">
       <thead class="table-dark">
         <tr>
+          <th scope="col">Fecha</th>
           <th scope="col">Nombre Cliente</th>
           <th scope="col">Rut</th>
           <th scope="col">Telefono</th>
           <th scope="col">Email</th>
           <th scope="col">Direccion</th>
+          <th scope="col">Foto mascota</th>
           <th scope="col">Foto transferencia</th>
         </tr>
       </thead>
       <tbody>
 
-        
-        <tr>
-          <td>Testt</td>
-          <td>Testt</td>
-          <td>Testt</td>
-          <td>Testt</td>
-          <td>Testt</td>
-          <td>Ver foto</td>
-        </tr>
-      </tbody>
-    </table>
-  <!--  </form> -->
-    <!--
-    <h1>Detalle Mascotas</h1>
-    <table class="table">
-      <thead class="table-dark">
-        <tr>
-          <th scope="col">Nombre</th>
-          <th scope="col">Tipo mascota</th>
-          <th scope="col">Tamaño collar</th>
-          <th scope="col">Color Collar</th>
-          <th scope="col">Color placa</th>
-          <th scope="col">info placa</th>
-          <th scope="col">Foto Mascota</th>
-        
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Mark</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>Ver foto</td>
-        </tr>
-        <tr>
-          <td>Mark</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>Ver foto</td>
-        </tr>
-        <tr>
-          <td>Mark</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>test</td>
-          <td>Ver foto</td>
-        </tr>
-      </tbody>
-    </table>
-    <h1>Estado pedidos</h1>
-    <table class="table">
-      <thead class="table-dark">
-        <tr>
-          <th scope="col">Nombre Cliente</th>
-          <th scope="col">En producción</th>
-          <th scope="col">Listo para envío</th>
-          <th scope="col">Enviado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Mark</td>
-          <td>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Default checkbox
-              </label>
-            </div>
-          </td>
-          <td>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Default checkbox
-              </label>
-            </div>
-          </td>
-          <td>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Default checkbox
-              </label>
-            </div>
-          </td>
+        <% 
 
-        </tr>
+        var fecha;
+          const formatDate = (date)=>{
+          let formatted_date = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear()
+          return formatted_date;
+        }
+        for(let i=0; i < clientes.length; i++) { 
+
+          fecha = clientes[i].FECHA;
+          if(fecha != null){
+          %>
+          <tr>
+            <td><%=formatDate(fecha)%></td>
+            <% }else{ %>
+              <td>Error Fecha</td>
+              <% } %>
+            <td><%= clientes[i].NOMBRE%></td>
+            <td><%= clientes[i].RUT%></td>
+            <td><%= clientes[i].TELEFONO%></td>
+            <td><%= clientes[i].MAIL%></td>
+            <td><%= clientes[i].nombre_comuna%>,<%= clientes[i].CALLE%>,<%= clientes[i].NUMERO%></td>
+            <td> <a href="uploads/<%= clientes[i].ftreferencial%>" target="_blank">Ver Mascota</a></td>
+          <td><a href="uploads/<%= clientes[i].ftcomprobante%>" target="_blank">Ver transferencia</a></td>
+          </tr>
+
+          <% } %>
+
       </tbody>
     </table>
-  </div>
--->
+
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <%- include('footer') %> 

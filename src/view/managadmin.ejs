@@ -9,74 +9,88 @@
     <title>Garra placa</title>
 </head>
 <body>
-  <%- include('header') %> 
+  <%- include('headeradmin') %> 
     <div class="card-body">
-        <h3>Registrar productos</h3>
+
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="true" href="/managadmin">Inventario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/managadminpedidos">Pedidos</a>
+        </li>
+
+      </ul>
+      <form action="/registrarProducto" method="POST">
+        <h3 style="text-align: center;">Registrar productos</h3>
         <div class="row g-3" style="margin-left: 90px; margin-right: 90px">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Collares</label>
-          <input type="text" class="form-control" id="inputEmail4" name="collares">
-        </div>
-   <!--      <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Cantidad de collares</label>
-          <input type="email" class="form-control" id="inputEmail4">
-        </div>-->
 
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Tamaños disponibles</label>
-          <input type="text" class="form-control" id="inputEmail4" name="tamanos">
+          <label for="inputEmail4" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="inputEmail4" name="collarname">
         </div>
-    <!--    <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Filamento</label>
-          <input type="email" class="form-control" id="inputEmail4">
-        </div>
--->
-<!-- 
+
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Cantidad de Filamento</label>
-          <input type="email" class="form-control" id="inputEmail4">
+          <label for="inputState" class="form-label">Color Collar</label>
+          <select id="inputState" class="form-select" name="colorcollar">
+            <option selected>Seleccione...</option>
+              <option value=1>Rojo</option>
+              <option value=2>Azul</option>
+              <option value=3>Negro</option>
+              <option value=4>Verde</option>
+          </select>
         </div>
-        -->
+
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Colores</label>
-          <input type="text" class="form-control" id="inputEmail4" name="color">
+          <label for="inputState" class="form-label">Tamaño Collar</label>
+          <select id="inputState" class="form-select" name="tamanocollar">
+            <option selected>Seleccione...</option>
+              <option value=1>S</option>
+              <option value=2>M</option>
+              <option value=3>L</option>
+              <option value=4>XS</option>
+              <option value=5>XL</option>
+              
+          </select>
         </div>
-        <a href="#" class="btn btn-primary">Guardar</a>
+        <button type="submit" class="btn btn-primary" >Agregar nuevo producto</button>
       </div>
     </div>
     <br>
+  </form>
 
     <table class="table">
       <thead class="table-dark">
         <tr>
           <th scope="col">Nombre Producto</th>
           <th scope="col">Color</th>
-          <th scope="col">Editar</th>
+          <th scope="col">Tamaño</th>
           <th scope="col">Eliminar</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td><button type="button" class="btn btn-secondary">Editar</button></td>
-          <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td><button type="button" class="btn btn-secondary">Editar</button></td>
-          <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <th scope="row">3</th>
-          <!-- <td colspan="2"><button type="button" class="btn btn-secondary">Editar</button></td> -->
-          <td><button type="button" class="btn btn-secondary">Editar</button></td>
-          <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-        </tr>
+        <% 
+        for(let i=0; i < inventario.length; i++) { 
+
+          %>
+          <tr>
+            <td><%= inventario[i].NOMBRE%></td>
+            <td><%= inventario[i].NOMBRE_COLOR%></td>
+            <td><%= inventario[i].TAMANO%></td>
+            <td>
+              <form action="/eliminarProducto" method="POST">
+              <input type="text" class="form-control" name="eliminarproduct" style="display:none" value="<%= inventario[i].ID_COLLAR%>">
+              <button type="submit" class="btn btn-danger" >Eliminar</button>
+              </form>
+
+            </td>
+
+          </tr>
+          <% } %>
+
       </tbody>
     </table>
+ 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <%- include('footer') %> 
 </body>

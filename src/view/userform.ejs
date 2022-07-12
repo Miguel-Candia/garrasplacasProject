@@ -13,7 +13,7 @@
     <%- include('header') %> 
 
 
-    <form action="Userform/registrarCliente" method="POST">
+    <form action="/registrarCliente" method="POST" enctype="multipart/form-data">
 
        <div class="row g-3" style="margin-left: 90px; margin-right: 90px; margin-bottom: 50px">
         <h3>Datos Cliente</h3>
@@ -21,10 +21,12 @@
         <label for="nombrecliente" class="form-label">Nombre Cliente</label>
         <input type="text" class="form-control" id="nombrecliente" name="nombre">
       </div>
+
       <div class="col-md-6">
         <label for="rut" class="form-label">Rut Cliente</label>
         <input type="number" class="form-control" id="rut" name="rut">
       </div>
+
       <div class="col-md-6">
         <label for="number" class="form-label">Teléfono</label>
         <input type="number" class="form-control" id="number" name="telefono">
@@ -35,45 +37,38 @@
         <select id="inputState" class="form-select" name="region">
         <option selected>Seleccione...</option>
       <% for(let i=0; i < regiones.length; i++) { %>
-
-        <option > <%= regiones[i].nombre_region %></option>
-
+        <option value="<%=regiones[i].ID_REGION%>"> <%= regiones[i].nombre_region %></option>
         <% } %>
-
       </select>
     </div>
-      
-
-
 
     <div class="col-md-6">
       <label for="inputState" class="form-label">Comuna</label>
       <select id="inputState" class="form-select" name="comuna">
       <option selected>Seleccione...</option>
-
-        <option ></option>
-
+      <% for(let i=0; i < comunas.length; i++) { %>
+        <option value="<%=comunas[i].ID_COMUNA%>"> <%= comunas[i].nombre_comuna %></option>
+        <% } %>
       </select>
     </div>
 
-
-  
-
-
-      
       <div class="col-md-3">
         <label for="calle" class="form-label">Calle</label>
         <input type="text" class="form-control" id="calle" name="calle">
       </div>
+
       <div class="col-md-3">
         <label for="number" class="form-label">Numero</label>
         <input type="number" class="form-control" id="numero" name="numero">
       </div>
+
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Email</label>
         <input type="email" class="form-control" id="inputEmail4" name="email">
       </div>
+
       <h3>Datos Mascota</h3>
+
       <div class="col-md-6">
         <label for="nombremascota" class="form-label">Nombre Mascota</label>
         <input type="text" class="form-control" id="nombremascota" name="nombremascota">
@@ -88,24 +83,39 @@
         <label for="inputState" class="form-label">Agregar Collar</label>
         <select id="inputState" class="form-select" name="collar">
           <option selected>Seleccione...</option>
+          <% for(let i=0; i < collares.length; i++) { %>
+            <option value="<%=collares[i].ID_COLLAR%>"> <%= collares[i].NOMBRE %></option>
+          <% } %>
         </select>
       </div>
+
       <div class="col-md-6">
         <label for="inputState" class="form-label">Color Collar</label>
         <select id="inputState" class="form-select" name="colorcollar">
           <option selected>Seleccione...</option>
+          <% for(let i=0; i < colores.length; i++) { %>
+            <option value="<%=colores[i].ID_COLOR%>"> <%= colores[i].NOMBRE_COLOR %></option>
+            <% } %>
         </select>
       </div>
+
       <div class="col-md-6">
         <label for="inputState" class="form-label">Tamaño Collar</label>
         <select id="inputState" class="form-select" name="tamano">
           <option selected>Seleccione...</option>
+          <% for(let i=0; i < tamanos.length; i++) { %>
+            <option value="<%=tamanos[i].ID_TAMANO%>"> <%= tamanos[i].TAMANO %></option>
+          <% } %>
         </select>
       </div>
+
       <div class="col-md-6">
         <label for="inputState" class="form-label">Color de Placa</label>
         <select id="inputState" class="form-select" name="colorplaca">
           <option selected>Seleccione...</option>  
+          <% for(let i=0; i < colores.length; i++) { %>
+            <option value="<%=colores[i].ID_COLOR%>"> <%= colores[i].NOMBRE_COLOR %></option>
+          <% } %>
         </select>
       </div>
 
@@ -115,14 +125,14 @@
       </div>
 
       <div class="col-12">
-        <label for="inputAddress" class="form-label">Foto referencial: </label>
-        <input type="file" size="25" id="nomArch1" name="nomArch1" />
+        <label for="inputAddress" class="form-label"><b>Foto referencial: </b></label>
+        <input type="file" size="25" id="ftreferencial" name="ftreferencial" />
        <!--  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"> -->
       </div>
       <h3>Datos de Pago</h3>
       <div class="col-12">
-        <label for="inputAddress" class="form-label">Foto Comprobante: </label>
-        <input type="file" size="25" id="nomArch1" name="nomArch1" />
+        <label for="inputAddress" class="form-label"><b>Foto Comprobante: </b></label>
+        <input type="file" size="25" id="ftcomprobante" name="ftcomprobante" />
        <!--  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"> -->
       </div>
       <div  style="margin-left: 50px; margin-right: 50px; text-align: center;margin-top: 80px;">
@@ -137,6 +147,7 @@
        </div>
     </div>
     </form>
+    <script src="js/Userform.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <%- include('footer') %> 

@@ -1,13 +1,25 @@
 const controller = {};
 
 
+/**
+ * @method controllLoginAdmin
+ * @description Metodo para validar el login de un administrador
+ */
+
+
+
 controller.renderloginadmin = (req,res) =>{
 
     res.render("loginadmin");
 }
 
 
-
+/**
+ * @function validarlogin
+ * @description Funcion para validar el login de un administrador
+ * @param {string} usuario - Nombre de usuario
+ * @param {string} password - Contraseña del usuario
+ */
 controller.validarlogin = (req, res) => {
 
     try{

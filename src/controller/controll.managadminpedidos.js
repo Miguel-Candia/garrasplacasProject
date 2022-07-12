@@ -1,8 +1,16 @@
 const controller = {};
 
+/**
+ * @module controller/controll.managadminpedidos
+ * @description Controlador para la vista de administracion de pedidos
+ */
 
 
-
+/**
+ * @function renderpedidos
+ * @description Funcion que renderiza la pagina de administracion de pedidos
+ * @param {Array} clientes - Array con los clientes
+ */
 controller.renderpedidos = (req,res) =>{
     try{
         req.getConnection((err, con) => {

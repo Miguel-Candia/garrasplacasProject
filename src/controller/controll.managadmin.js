@@ -1,5 +1,9 @@
 const controller = {};
 
+/**
+ * @module controller/controll.managadmin
+ * @description Controlador para la vista de administracion de productos
+ */
 
 
 /*
@@ -32,8 +36,10 @@ controller.renderselect = (req,res) =>{
     }
 */
 
-
-
+/**
+ * @function renderinventario
+ * @description Funcion que renderiza la pagina de administracion de inventario
+ */
 controller.renderinventario = (req,res) =>{
 //consulta a la base dato
 try{
@@ -57,6 +63,13 @@ try{
 
 }
 
+/**
+ * @function registrarProducto
+ * @description Funcion que registra un producto en la base de datos
+ * @param {string} collarname - Nombre del collar
+ * @param {string} collartamano - Tamaño del collar
+ * @param {string} collarcolor - Color del collar
+ */
 controller.registrarProducto = (req, res) => {
 
     try{
@@ -90,6 +103,11 @@ controller.registrarProducto = (req, res) => {
 
 }
 
+/**
+ * @function eliminarProducto
+ * @description Funcion que elimina un producto de la base de datos
+ * @param {string} eliminarProducto - Id del collar
+ */
 controller.eliminarProducto = (req, res) => {
 
     try{

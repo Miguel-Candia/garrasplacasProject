@@ -2,7 +2,17 @@
 const fs = require('fs/promises');
 const controller = {};
 
-//
+
+/**
+ * @module controllerUserform
+ * @description Controlador de la vista de formulario de cliente
+ */
+
+
+/**
+ * @function renderregion
+ * @description Funcion que renderiza la pagina de region
+ */
 controller.renderregion = (req, res) => {
     // coll back
 try{

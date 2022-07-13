@@ -3,9 +3,16 @@ const controller=require("../controller/controll.price.js")
 
 const routes = express.Router();
 
+/**
+ * @module routesPrice
+ * @description Metodos get y post de view price
+ */
 
-// put edita datos
-// post el set
+/**
+ * @function get/price 
+ * @description Funcion que renderiza al controller renderprice
+ */
+
 routes.get("/price",controller.renderprice);
 
 

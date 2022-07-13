@@ -3,9 +3,15 @@ const controller=require("../controller/index.js")
 
 const routes = express.Router();
 
+/**
+ * @module routesindex
+ * @description Metodos get y post de view index
+ */
 
-// put edita datos
-// post el set
+/**
+ * @function get/ 
+ * @description Funcion que renderiza al controller demo
+ */
 routes.get("/",controller.demo);
 
 

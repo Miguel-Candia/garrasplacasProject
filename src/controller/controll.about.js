@@ -1,10 +1,14 @@
 const controller = {};
 
 
+/**
+ * @module controllAbout
+ * @description Metodo render about
+ */
+
 
 
 controller.renderabout = (req,res) =>{
-//consulta a la base dato
     console.log("Controller Demoo");
 
     res.render("about");

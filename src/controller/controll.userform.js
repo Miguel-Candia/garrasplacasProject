@@ -14,7 +14,7 @@ const controller = {};
  * @description Funcion que renderiza la pagina de region
  */
 controller.renderregion = (req, res) => {
-    // coll back
+
 try{
     req.getConnection((err, con) => {
 
@@ -62,7 +62,26 @@ try{
 
 
 
-
+/**
+ * @function registrarCliente
+ * @description Funcion que renderiza la pagina de region
+ * @param {Date} fecha fecha registro cliente
+ * @param {String} nombre nombre registro cliente
+ * @param {String} rut Rut registro cliente
+ * @param {int} telefono telefono registro cliente
+ * @param {int} comuna comuna registro cliente
+ * @param {String} calle calle registro cliente
+ * @param {int} numero numero registro cliente
+ * @param {String} email email registro cliente
+ * @param {String} nombremascota nombre mascota registro cliente
+ * @param {String} tipomascota tipo mascota registro cliente
+ * @param {int} collar collar registro cliente
+ * @param {int} colorcollar color del collar registro cliente
+ * @param {int} tamano tamaño registro cliente
+ * @param {int} colorplaca color de la placa registro cliente
+ * @param {String} informacion informacion registro cliente
+ * 
+ */
 controller.registrarCliente = async (req, res) => {
 
     try{
@@ -70,7 +89,6 @@ controller.registrarCliente = async (req, res) => {
         console.log(req.body)
         console.log("------Ver FILES--------")
         console.log(req.files)
-    //desestructurar objeto
     const {
         fecha=new Date(),
         nombre, 
@@ -106,8 +124,9 @@ controller.registrarCliente = async (req, res) => {
          let inserquery = con.query("INSERT INTO cliente (fecha,nombre,rut, telefono,id_comuna,calle,numero,mail,nombremascota,tipomascota,id_collar,colorcollar,id_tamano,colorplaca,informacion,ftreferencial,ftcomprobante) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",data);
 
          if(inserquery){
-             //redirect se entrega la Ruta!
+
              res.redirect("/");
+             
          }else{
              res.render("error",{errores:"Error al guardar el registro intentar mas tarde"});
          }

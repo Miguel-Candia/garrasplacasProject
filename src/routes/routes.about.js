@@ -3,9 +3,15 @@ const controller=require("../controller/controll.about.js")
 
 const routes = express.Router();
 
+/**
+ * @module routesabout
+ * @description Metodos get y post de view about
+ */
 
-// put edita datos
-// post el set
+/**
+ * @function get/about 
+ * @description Funcion que renderiza al controller renderabout
+ */
 routes.get("/about",controller.renderabout);
 
 

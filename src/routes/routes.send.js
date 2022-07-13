@@ -3,9 +3,16 @@ const controller=require("../controller/controll.send.js")
 
 const routes = express.Router();
 
+/**
+ * @module routesSend
+ * @description Metodos get y post de view send
+ */
 
-// put edita datos
-// post el set
+/**
+ * @function get/send 
+ * @description Funcion que renderiza al controller rendersend
+ */
+
 routes.get("/send",controller.rendersend);
 
 

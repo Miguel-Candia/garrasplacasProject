@@ -4,14 +4,30 @@ const controller=require("../controller/controll.managadmin.js")
 const routes = express.Router();
 
 
-// put edita datos
-// post el set
-//routes.get("/managadmin",controller.renderselect);
+/**
+ * @module routesmanagadmin
+ * @description Metodos get y post de view managadmin
+ */
+
+/**
+ * @function get/managadmin 
+ * @description Funcion que renderiza al controller renderinventario
+ */
+
 routes.get("/managadmin",controller.renderinventario);
+
+/**
+ * @function post/registrarProducto 
+ * @description Funcion que renderiza al controller registrarProducto
+ */
 routes.post("/registrarProducto",controller.registrarProducto);
+
+/**
+ * @function post/eliminarProducto 
+ * @description Funcion que renderiza al controller eliminarProducto
+ */
 routes.post("/eliminarProducto",controller.eliminarProducto);
-// VAlidar Administrador
-function administrador($usuario, $contraseña){}
+
 
 
 module.exports = routes;

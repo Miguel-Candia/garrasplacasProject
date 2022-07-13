@@ -3,9 +3,16 @@ const controller=require("../controller/controll.informations.js")
 
 const routes = express.Router();
 
+/**
+ * @module routesinformations
+ * @description Metodos get y post de view informations
+ */
 
-// put edita datos
-// post el set
+
+/**
+ * @function get/informations 
+ * @description Funcion que renderiza al controller renderinformations
+ */
 routes.get("/informations",controller.renderinformations);
 
 

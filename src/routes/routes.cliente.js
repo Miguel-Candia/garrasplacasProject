@@ -3,9 +3,16 @@ const controller=require("../controller/controll.cliente.js")
 
 const routes = express.Router();
 
+/**
+ * @module routescliente
+ * @description Metodos get y post de view cliente
+ */
 
-// put edita datos
-// post el set
+
+/**
+ * @function get/clientes 
+ * @description Funcion que renderiza al controller listcliente
+ */
 routes.get("/clientes", controller.listcliente);
 
 

@@ -4,8 +4,15 @@ const controller=require("../controller/controll.error.js")
 const routes = express.Router();
 
 
-// put edita datos
-// post el set
+/**
+ * @module routeserror
+ * @description Metodos get y post de view error
+ */
+
+/**
+ * @function get/error 
+ * @description Funcion que renderiza al controller rendererror
+ */
 routes.get("/error",controller.rendererror);
 
 

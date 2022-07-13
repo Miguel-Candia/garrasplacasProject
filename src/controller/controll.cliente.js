@@ -10,7 +10,6 @@ const controller = {};
  * @description Funcion que lista los clientes desde la bsae de datos.
  */
 controller.listcliente = (req,res) =>{
-//consulta a la base dato
     req.getConnection((err,con)=>{
         con.query("Select * from cliente",(err,data) =>{
             if(err){

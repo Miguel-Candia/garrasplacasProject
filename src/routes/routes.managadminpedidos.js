@@ -3,14 +3,18 @@ const controller=require("../controller/controll.managadminpedidos.js")
 
 const routes = express.Router();
 
+/**
+ * @module routesmanagadminpedidos
+ * @description Metodos get y post de view managadminpedidos
+ */
 
-// put edita datos
-// post el set
+/**
+ * @function get/managadminpedidos 
+ * @description Funcion que renderiza al controller renderpedidos
+ */
+
 routes.get("/managadminpedidos",controller.renderpedidos);
-//routes.get("/userform",controller.renderregion);
 
-// Mostrar en html los datos del cliente en la tabla
-function getcliente(){}
 
 
 module.exports = routes;

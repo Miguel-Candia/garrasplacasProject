@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/styles.css">
     <link rel="stylesheet" href="public/stylesgp.css">
-    <title>Garra placa</title>
+    <link rel="icon" href="imge/garraplacas.jpg">
+    <title>Garra placas</title>
 </head>
 <body>
     <!-- <h1>Main</h1> -->
@@ -142,11 +143,37 @@
      </p>
       <div class="col-12">
         <button type="submit" class="btn btn-primary" >Enviar Formulario</button>
-        
       </div>
-       </div>
     </div>
-    </form>
+  </div>
+  </form>
+
+        <form action="/purchase" method="POST">
+          <script
+            src="https://checkout.stripe.com/checkout.js"
+            class="stripe-button"
+            data-key="pk_test_51LKwBjDuaKZaw8ZqCeTyDNdDejwZ63awnKz8U7zqoQRDiakXhKTfgcMTKi1T8V071BxTwWMjk3tBvaPMCjpautK600iWclVSmJ"
+            data-name="Bienvenido a Garra y placas"
+            data-description="Pagar con Tarjeta de Credito"
+            data-image="imge/garraplacas.jpg"
+            data-amount="{{ORDER_AMOUNT}}"
+            data-currency="usd">
+          </script>
+          <script>
+            document.getElementsByClassName('stripe-button-el')[0].style.display='none';
+        </script>
+        <div class="col-12" style="margin-left: 50px; margin-right: 50px; text-align: center;margin-top: 0px;margin-bottom: 40px;">
+          <button type="submit" class="btn btn-primary" >Pagar con Tarjeta de credito</button>
+        </div>
+        </form>
+        
+      
+       
+
+
+    
+
+
     <script src="js/Userform.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 

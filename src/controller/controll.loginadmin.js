@@ -2,11 +2,14 @@ const controller = {};
 
 
 /**
- * @method controllLoginAdmin
+ * @module controllLoginAdmin
  * @description Metodo para validar el login de un administrador
  */
 
-
+/**
+ * @function renderloginadmin
+ * @description Funcion que render loginadmin
+ */
 
 controller.renderloginadmin = (req,res) =>{
 

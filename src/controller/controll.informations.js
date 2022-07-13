@@ -8,7 +8,7 @@ const controller = {};
 
 /**
  * @function renderinformations
- * @description Funcion que ...
+ * @description Funcion que render informations
  */
 controller.renderinformations = (req,res) =>{
 //consulta a la base dato
